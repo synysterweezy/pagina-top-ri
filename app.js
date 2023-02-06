@@ -6,6 +6,7 @@ const sass = require('node-sass-middleware');
 const app = express();
 
 const handlebars = require('express-handlebars');
+const { search } = require("./config/routes");
 
 app.engine("handlebars", handlebars.engine({
     layoutsDir: `${__dirname}/views`,
@@ -14,9 +15,11 @@ app.engine("handlebars", handlebars.engine({
 app.set("view engine", "handlebars");
 app.set("views", `${__dirname}/views`);
 
-app.get('/', function(req, res) {
-    res.render('index') 
-    });
+
+
+app.get('/', function(req, res){
+    res.render('index')
+});    
 
 app.use(sass({
     src: `${__dirname}/public/scss`,
