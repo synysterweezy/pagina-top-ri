@@ -13,6 +13,7 @@ Siga os seguintes passos para instalar e executar sua aplicação:
  git clone https://github.com/synysterweezy/pagina-top-ri
 
 2. Navegue até a pasta da aplicação
+ 
  cd seu-repositorio
 
 3. Instale as dependências necessárias usando o npm
