@@ -34,7 +34,7 @@ Siga os seguintes passos para instalar e executar sua aplicação:
 - [Handlebars](https://handlebarsjs.com) - Motor de templates para JavaScript
 - [Sass](https://sass-lang.com) - Linguagem de estilo para aplicações web
 - [Bootstrap](https://getbootstrap.com) - Framework de design responsivo para aplicações web
-
+- [Axios](https://axios-http.com/ptbr/docs/intro) - Axios é um cliente HTTP baseado-em-promessas para o node.js e para o navegador. É isomórfico (= pode rodar no navegador e no node.js com a mesma base de código). No lado do servidor usa o código nativo do node.js - o modulo http, enquanto no lado do cliente (navegador) usa XMLHttpRequests.
 ## Autor
 
 Este projeto foi criado por Edward Claver
