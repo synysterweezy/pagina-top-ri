@@ -1,6 +1,6 @@
-# Aplicação de Busca usando Node.js, Express, Handlebars, Sass e Bootstrap
+# Aplicação de Busca usando Node.js, Express, Handlebars, Sass, Bootstrap e Axios.
 
-Esta é uma aplicação de busca simples construída usando Node.js, Express, Handlebars, Sass, Bootstrap
+Esta é uma aplicação de busca simples construída usando Node.js, Express, Handlebars, Sass, Bootstrap e o Axios.
 ## Pré-requisitos
 
 - Node.js instalado no seu sistema Linux
