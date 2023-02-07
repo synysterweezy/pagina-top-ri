@@ -1,24 +1,38 @@
 <div class="container my-5">
-      <h1>Página de busca</h1>
-      <form>
-        <input type="text" id="searchTerm" name="search" class="form-control" placeholder="Digite aqui a sua busca">
-        <button type="button" id="searchButton" class="btn btn-primary mt-3">Buscar</button>
-      </form>
-    </div>
-    <div id="results"></div>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script>
-      const searchButton = document.getElementById('searchButton');
-      const searchTerm = document.getElementById('searchTerm');
-      const results = document.getElementById('results');
+  <h1>Página de busca</h1>
+  <form>
+    <input type="text" id="searchTerm" name="search" class="form-control" placeholder="Digite aqui a sua busca">
+    <button type="button" id="searchButton" class="btn btn-primary mt-3">Buscar</button>
+  </form>
+  <div id="results">
 
-      searchButton.addEventListener('click', function() {
-        axios.get('/search?q=' + searchTerm.value)
-          .then(response => {
-            results.innerHTML = response.data;
-          })
-          .catch(error => {
-            results.innerHTML = 'Erro: ' + error;
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    const searchTerm = document.getElementById('searchTerm');
+    const searchButton = document.getElementById('searchButton');
+    searchButton.addEventListener('click', function () {
+      axios.get('http://localhost:7890/search?query=' + searchTerm.value)
+        .then(response => {
+          const json = JSON.parse(response.request.response)
+          let list = json.results;
+          let html = '<ul>';
+          list.forEach(item => {
+            html += `<li><a href="/results/${item.docid}">` + item.filename + '</a></li>';
+
           });
-      });
-    </script>
+          html += '</lu>';
+          document.getElementById('results').innerHTML = html;
+
+        })
+
+        .catch(error => {
+          console.log(error);
+        })
+
+    })
+
+  </script>
+
+
+</div>
