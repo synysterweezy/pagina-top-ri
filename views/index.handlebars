@@ -11,24 +11,22 @@
   <script>
     const searchTerm = document.getElementById('searchTerm');
     const searchButton = document.getElementById('searchButton');
+
     searchButton.addEventListener('click', function () {
-      axios.get('http://localhost:7890/search?query=' + searchTerm.value)
-        .then(response => {
-          const json = JSON.parse(response.request.response)
-          let list = json.results;
-          let html = '<ul>';
-          list.forEach(item => {
-            html += `<li><a href="/results/${item.docid}">` + item.filename + '</a></li>';
+      axios.get('http://localhost:7890/search?query=' + searchTerm.value).then(response => {
+        const json = JSON.parse(response.request.response)
+        let list = json.results;
+        let html = '<ul>';
+        list.forEach(item => {
+          html += `<li><a href="/results/${item.docid}">` + item.filename + '</a></li>';
 
-          });
-          html += '</lu>';
-          document.getElementById('results').innerHTML = html;
+        });
+        html += '</lu>';
+        document.getElementById('results').innerHTML = html;
 
-        })
-
-        .catch(error => {
-          console.log(error);
-        })
+      }).catch(error => {
+        console.log(error);
+      })
 
     })
 
